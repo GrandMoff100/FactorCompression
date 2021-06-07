@@ -5,8 +5,7 @@ target = b"Hello, world!"
 
 
 def find_factors(x):
-    step = 2 if x % 2 else 1
-    for i in range(1, int(x ** 0.5) + 1, step):
+    for i in range(1, int(x ** 0.5) + 1, x % 2 + 1):
         if x % i == 0 and i > 1:
             return [i] + find_factors(int(x / i))
     return [x]
